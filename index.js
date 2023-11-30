@@ -1,12 +1,20 @@
-console.log(document.getElementById("hello").textContent)
-
-document.getElementById("hello").textContent = "Hello World dear team"
-
-function display() {
-    var text = document.getElementById("input").value
-    //Your code for factorial
-
+function add() {
+    var task = document.getElementById("input").value
     
-    document.getElementById("output").textContent = text
+    var listitem = document.createElement("li") // <li></li>
 
+    listitem.innerHTML = task + ' <button type="button" id="deletebtn" onclick="delete_list(event)">Delete</button>'   // <li>task + button</li>
+    var ulist = document.getElementById("list")
+
+
+    ulist.append(listitem)
+
+
+}
+
+function delete_list(event) {
+
+    var btn = document.getElementById("deletebtn")
+    
+    event.target.parentElement.remove()
 }
